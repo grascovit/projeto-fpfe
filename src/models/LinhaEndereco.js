@@ -1,5 +1,4 @@
 class LinhaEndereco {
-
   constructor(abreviacaoSubunidade, numeroSubunidade, nomePropriedade, numeroAndar, 
     tipoAndar, complemento, numeroPropriedade, numeroSecaoLote, nomeLogradouro, 
     codigoLogradouro, codigoSufixoLogradouro, setorCensitario) {

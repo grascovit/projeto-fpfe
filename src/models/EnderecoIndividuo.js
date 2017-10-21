@@ -1,5 +1,4 @@
 class EnderecoIndividuo {
-
   constructor(linhaEndereco, bairro, municipio, codigoMunicipio, estado, 
     codigoPostal, caixaPostal, identificadorPais, tipoEndereco) {
       Object.assign(this, {
