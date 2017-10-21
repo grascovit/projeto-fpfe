@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router-dom'
+import Layout from '../components/layout/Layout'
 
 class Repositorio extends Component {
   render() {
     return (
-      <div>
+      <Layout router={this.props.history}>
         <p>Repositório</p>
-      </div>
+      </Layout>
     )
   }
 }
