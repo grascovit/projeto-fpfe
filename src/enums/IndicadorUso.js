@@ -1,7 +1,7 @@
 //O indicador de uso opcional não é obrigatório. 
 //Se definido, então o valor é um de 6 códigos 
 //possíveis documentados abaixo.
-class IndicadorNome{
+class IndicadorUso{
   static options() {
     return ([
       { codigo: 1, label: 'Informação não confiável' },
