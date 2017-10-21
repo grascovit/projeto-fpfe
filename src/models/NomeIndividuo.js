@@ -1,19 +1,14 @@
-const nomeIndividuo = () => {
-    return ({
-        titulos,
-        nome,
-        indicador: indicadorIndividuo,
-        
-        
-        
-        sobrenome,
-        sufixos,
-        tipoIdentificador
-
-    
+class NomeIndividuo{
+  constructor(titulos, nome, indicador, sufixos, tipoIndentificador) {
+    Object.assign(this, {
+      titulos,
+      nome,
+      indicador,
+      sobrenome,
+      sufixos,
+      tipoIdentificador
     })
+  }
 }
-
-export default nomeIndividuo
 
 
