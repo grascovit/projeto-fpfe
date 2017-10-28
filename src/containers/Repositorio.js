@@ -6,8 +6,8 @@ import Layout from '../components/layout/Layout'
 class Repositorio extends Component {
   render() {
     return (
-      <Layout router={this.props.history}>
-        <p>Repositório</p>
+      <Layout router={this.props.history} icon='database' header='Repositório' subheader='Repositório de pacientes.'>
+        <p>Conteúdo...</p>
       </Layout>
     )
   }
