@@ -13,16 +13,20 @@ class CadastroStep extends Component {
     })
   }
 
+  handleStepClick = (e) => {
+    e.preventDefault()
+    this.props.stepChangeCallback(this.props.step.option)
+  }
+
   render() {
-    const active = this.props.active === 'active' ? true : false
-    const option = this.stepOption()[this.props.step]
+    const option = this.stepOption()[this.props.step.option]
 
     return (
-      <Step link active={active}>
-        <Icon name={option['icon']} color='teal'/>
+      <Step link active={this.props.step.isActive} completed={this.props.step.isCompleted} onClick={this.handleStepClick}>
+        <Icon name={option.icon} color='teal'/>
         <Step.Content>
-          <Step.Title>{option['title']}</Step.Title>
-          <Step.Description>{option['description']}</Step.Description>
+          <Step.Title>{option.title}</Step.Title>
+          <Step.Description>{option.description}</Step.Description>
         </Step.Content>
       </Step>
     )
