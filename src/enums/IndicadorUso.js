@@ -4,12 +4,14 @@
 class IndicadorUso{
   static options() {
     return ([
-      { codigo: 1, label: 'Informação não confiável' },
-      { codigo: 2, label: 'Nome com erro de digitação'},
-      { codigo: 3, label: 'Nome não é para ser usado'},
-      { codigo: 4, label: 'Vínculo do nome proibido por lei'},
-      { codigo: 6, label: 'Requisito especial de privacidade/segurança'},
-      { codigo: 9, label: 'Nome temporário'},
+      { value: 1, text: 'Informação não confiável' },
+      { value: 2, text: 'Nome com erro de digitação'},
+      { value: 3, text: 'Nome não é para ser usado'},
+      { value: 4, text: 'Vínculo do nome proibido por lei'},
+      { value: 6, text: 'Requisito especial de privacidade/segurança'},
+      { value: 9, text: 'Nome temporário'},
       ])
   }
 }
+
+export default IndicadorUso
