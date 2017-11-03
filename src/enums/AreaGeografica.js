@@ -1,10 +1,12 @@
 class AreaGeografica {
   static options() {
     return ([
-      {codigo: 1, label: 'Identificador do sujeito local', codigoAlternativo: 'L'},
-      {codigo: 2, label:  'Identificador da área, região ou distrito', codigoAlternativo:  'A'},
-      {codigo: 3, label:  'Identificador do estado, província ou território', codigoAlternativo:  'E'},
-      {codigo: 4, label:  'Identificador nacional', codigoAlternativo: 'N'}
+      {value: 1, text: 'Identificador do sujeito local (L)'},
+      {value: 2, text:  'Identificador da área, região ou distrito (A)'},
+      {value: 3, text:  'Identificador do estado, província ou território (E)'},
+      {value: 4, text:  'Identificador nacional (N)'}
     ])
   }
 }
+
+export default AreaGeografica

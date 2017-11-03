@@ -24,7 +24,13 @@ class Home extends Component {
         endereco: { isActive: false, isCompleted: false, option: 'endereco', form: FormEndereco },
         comunicacaoEletronica: { isActive: false, isCompleted: false, option: 'comunicacaoEletronica', form: FormComunicacaoEletronica },
         vinculos: { isActive: false, isCompleted: false, option: 'vinculos', form: FormVinculos }
-      }
+      },
+      identificadorIndividuo: {},
+      nomeIndividuo: {},
+      dadosDemograficos: {},
+      endereco: {},
+      comunicacaoEletronica: {},
+      vinculos: {}
     }
   }
 
@@ -40,6 +46,24 @@ class Home extends Component {
 
     // Seta o novo estado
     this.setState({ steps })
+  }
+
+  handleInputChange = (event) => {
+    const activeStep = _.find(this.state.steps, ['isActive', true]).option
+    const property = event.target.name
+    const value = event.target.value
+    let object = this.state[activeStep]
+    object[property] = value
+
+    this.setState({[activeStep]: object})
+  }
+
+  handleSelectChange = (property, value) => {
+    const activeStep = _.find(this.state.steps, ['isActive', true]).option
+    let object = this.state[activeStep]
+    object[property] = value
+
+    this.setState({[activeStep]: object})
   }
 
   renderCadastroStep = (key) => {
@@ -67,7 +91,9 @@ class Home extends Component {
 
             <Grid.Column width={11} stretched>
               <Segment color='teal'>
-                <$activeStepForm />
+                <$activeStepForm 
+                  handleInputChange={this.handleInputChange}
+                  handleSelectChange={this.handleSelectChange} />
               </Segment>
             </Grid.Column>
           </Grid.Row>
