@@ -5,12 +5,19 @@ import { withRouter } from 'react-router-dom'
 import { Grid, Step, Segment, Button, Icon } from 'semantic-ui-react'
 import Layout from '../components/layout/Layout'
 import CadastroStep from '../components/CadastroStep'
+import IdentificadorIndividuo  from '../models/IdentificadorIndividuo'
+import NomeIndividuo from '../models/NomeIndividuo'
+import DadosDemograficos from '../models/DadosDemograficos'
+import EnderecoIndividuo from '../models/EnderecoIndividuo'
+import ComunicacaoEletronicaIndividuo from '../models/ComunicacaoEletronicaIndividuo'
+import VinculoIndividuo from '../models/VinculoIndividuo'
 import FormIdentificadorIndividuo from '../components/forms/FormIdentificadorIndividuo'
 import FormNomeIndividuo from '../components/forms/FormNomeIndividuo'
 import FormDadosDemograficos from '../components/forms/FormDadosDemograficos'
 import FormEndereco from '../components/forms/FormEndereco'
 import FormComunicacaoEletronica from '../components/forms/FormComunicacaoEletronica'
 import FormVinculos from '../components/forms/FormVinculos'
+import FormPersistencia from '../components/forms/FormPersistencia'
 
 class Home extends Component {
   constructor(props) {
@@ -23,7 +30,8 @@ class Home extends Component {
         dadosDemograficos: { isActive: false, isCompleted: false, option: 'dadosDemograficos', form: FormDadosDemograficos },
         endereco: { isActive: false, isCompleted: false, option: 'endereco', form: FormEndereco },
         comunicacaoEletronica: { isActive: false, isCompleted: false, option: 'comunicacaoEletronica', form: FormComunicacaoEletronica },
-        vinculos: { isActive: false, isCompleted: false, option: 'vinculos', form: FormVinculos }
+        vinculos: { isActive: false, isCompleted: false, option: 'vinculos', form: FormVinculos },
+        persistencia: { isActive: false, isCompleted: false, option: 'persistencia', form: FormPersistencia }
       },
       identificadorIndividuo: {},
       nomeIndividuo: {},
@@ -67,9 +75,31 @@ class Home extends Component {
   }
 
   handleSave = (event, data) => {
-    // TODO: validações
-    // TODO: instanciações
-    // TODO: sessionStorage
+    let activeStep = _.find(this.state.steps, ['isActive', true]).option
+    let patients = JSON.parse(sessionStorage.getItem('patients'))
+    let patient = {}
+    let identificador = new IdentificadorIndividuo({...this.state.identificadorIndividuo})
+    let nome = new NomeIndividuo({...this.state.nomeIndividuo})
+    let dadosDemograficos = new DadosDemograficos({...this.state.dadosDemograficos})
+    let endereco = new EnderecoIndividuo({...this.state.endereco})
+    let comunicacaoEletronica = new ComunicacaoEletronicaIndividuo({...this.state.comunicacaoEletronica})
+    let vinculos = new VinculoIndividuo({...this.state.vinculos})
+
+    patient['identificadorIndividuo'] = identificador
+    patient['nomeIndividuo'] = nome
+    patient['dadosDemograficos'] = dadosDemograficos
+    patient['endereco'] = endereco
+    patient['comunicacaoEletronica'] = comunicacaoEletronica    
+    patient['vinculos'] = vinculos
+
+    if (patients === null) {
+      patients = []
+      patients.push(patient)
+    } else {
+      patients.push(patient)
+    }
+
+    sessionStorage.setItem('patients', JSON.stringify(patients))
   }
 
   renderCadastroStep = (key) => {
@@ -101,19 +131,9 @@ class Home extends Component {
                 <$ActiveStepForm
                   formObject={this.state[_.find(this.state.steps, ['isActive', true]).option]}
                   handleInputChange={this.handleInputChange}
-                  handleSelectChange={this.handleSelectChange} />
+                  handleSelectChange={this.handleSelectChange}
+                  handleSave={this.handleSave} />
               </Segment>
-            </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row textAlign='center'>
-            <Grid.Column width={11} floated='right'>
-              <Button color='teal' animated='vertical' fluid onClick={() => {this.handleSave()}}>
-                <Button.Content visible><Icon name='save' /></Button.Content>
-                <Button.Content hidden>
-                  Salvar
-                </Button.Content>
-              </Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>

@@ -9,7 +9,8 @@ class CadastroStep extends Component {
       dadosDemograficos: { icon: 'browser', title: 'Dados Demográficos', description: 'Dados demográficos adicionais' },
       endereco: { icon: 'map', title: 'Endereço', description: 'Endereço do paciente' },
       comunicacaoEletronica: { icon: 'mail outline', title: 'Comunicação eletrônica', description: 'Dados de contatos eletrônicos' },
-      vinculos: { icon: 'group', title: 'Vínculos', description: 'Vínculos do paciente' }
+      vinculos: { icon: 'group', title: 'Vínculos', description: 'Vínculos do paciente' },
+      persistencia: { icon: 'save', title: 'Persistência', description: 'Salvar dados' }
     })
   }
 

@@ -8,3 +8,5 @@ class ComunicacaoEletronicaIndividuo {
       })
   }
 }
+
+export default ComunicacaoEletronicaIndividuo

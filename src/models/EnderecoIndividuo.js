@@ -1,16 +1,17 @@
 class EnderecoIndividuo {
-  constructor(linhaEndereco, bairro, municipio, codigoMunicipio, estado, 
-    codigoPostal, caixaPostal, identificadorPais, tipoEndereco) {
+  constructor(props) {
       Object.assign(this, {
-        linhaEndereco, // Linha de endereço
-        bairro, // Bairro
-        municipio, // Município
-        codigoMunicipio, // Código do município
-        estado, // Estado
-        codigoPostal, // Código postal
-        caixaPostal, // Caixa postal 
-        identificadorPais, // Identificador do país
-        tipoEndereco // Tipo do endereço
+        linhaEndereco: props.linhaEndereco, // Linha de endereço
+        bairro: props.bairro, // Bairro
+        municipio: props.municipio, // Município
+        codigoMunicipio: props.codigoMunicipio, // Código do município
+        estado: props.estado, // Estado
+        codigoPostal: props.codigoPostal, // Código postal
+        caixaPostal: props.caixaPostal, // Caixa postal 
+        identificadorPais: props.identificadorPais, // Identificador do país
+        tipoEndereco: props.tipoEndereco // Tipo do endereço
       })
   }
 }
+
+export default EnderecoIndividuo
