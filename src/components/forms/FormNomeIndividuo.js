@@ -14,32 +14,34 @@ class FormNomeIndividuo extends Component {
   }
 
   render() {
+    const { formObject } = this.props
+
     return (
       <div>
         <Form>
           <Form.Field>
             <label>Títulos</label>
-            <Input name='titulos' onChange={this.props.handleInputChange} placeholder='Títulos (Dr., Prof., etc.)' />
+            <Input name='titulos' defaultValue={formObject.titulos} onChange={this.props.handleInputChange} placeholder='Títulos (Dr., Prof., etc.)' />
           </Form.Field>
           <Form.Field>
             <label>Nome</label>
-            <Input name='nome' onChange={this.props.handleInputChange} placeholder='Nome do indivíduo' />
+            <Input name='nome' defaultValue={formObject.nome} onChange={this.props.handleInputChange} placeholder='Nome do indivíduo' />
           </Form.Field>
           <Form.Field>
             <label>Nome alternativo</label>
-            <Input name='nomeAlternativo' onChange={this.props.handleInputChange} placeholder='Nome alternativo do indivíduo' />
+            <Input name='nomeAlternativo' defaultValue={formObject.nomeAlternativo} onChange={this.props.handleInputChange} placeholder='Nome alternativo do indivíduo' />
           </Form.Field>
           <Form.Field>
             <label>Indicador de uso</label>
-            <Select name='indicadorUso' onChange={this.handleSelectChange} placeholder='Indicador de uso opcional para o nome' options={IndicadorUso.options()} />
+            <Select name='indicadorUso' defaultValue={formObject.indicadorUso} onChange={this.handleSelectChange} placeholder='Indicador de uso opcional para o nome' options={IndicadorUso.options()} />
           </Form.Field>
           <Form.Field required>
             <label>Sobrenome</label>
-            <Input name='sobrenome' onChange={this.props.handleInputChange} placeholder='Sobrenome do indivíduo' />
+            <Input name='sobrenome' defaultValue={formObject.sobrenome} onChange={this.props.handleInputChange} placeholder='Sobrenome do indivíduo' />
           </Form.Field>
           <Form.Field>
             <label>Sufixos</label>
-            <Input name='sufixos' onChange={this.props.handleInputChange} placeholder='Sufixos' />
+            <Input name='sufixos' defaultValue={formObject.sufixos} onChange={this.props.handleInputChange} placeholder='Sufixos' />
           </Form.Field>
         </Form>
       </div>

@@ -77,7 +77,8 @@ class Home extends Component {
   }
 
   render() {
-    const $activeStepForm = _.find(this.state.steps, ['isActive', true]).form
+    // eslint-disable-next-line react/jsx-pascal-case
+    const $ActiveStepForm = _.find(this.state.steps, ['isActive', true]).form
 
     return (
       <Layout router={this.props.history} icon='home' header='Home' subheader='Cadastro de identificador de paciente.'>
@@ -91,7 +92,8 @@ class Home extends Component {
 
             <Grid.Column width={11} stretched>
               <Segment color='teal'>
-                <$activeStepForm 
+                <$ActiveStepForm
+                  formObject={this.state[_.find(this.state.steps, ['isActive', true]).option]}
                   handleInputChange={this.handleInputChange}
                   handleSelectChange={this.handleSelectChange} />
               </Segment>
