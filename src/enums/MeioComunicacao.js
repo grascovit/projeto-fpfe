@@ -5,9 +5,9 @@ class MeioComunicacao {
       {value: 2, text:  'Celular',            codigoAlternativo: 'C'},
       {value: 3, text:  'Fax',                codigoAlternativo: 'F'},
       {value: 4, text:  'Pager',              codigoAlternativo: 'P'},
-      {value: 4, text:  'Correio eletrônico', codigoAlternativo: 'E'},
+      {value: 5, text:  'Correio eletrônico', codigoAlternativo: 'E'},
       {value: 6, text:  'URL',                codigoAlternativo: 'U'},
-      {value: 8, text:  'Outro',              codigoAlternativo: 'O'},
+      {value: 7, text:  'Outro',              codigoAlternativo: 'O'},
     ])
   }
 }
