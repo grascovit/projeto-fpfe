@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 import { withRouter } from 'react-router-dom'
-import { Grid, Step, Segment } from 'semantic-ui-react'
+import { Grid, Step, Segment, Button, Icon } from 'semantic-ui-react'
 import Layout from '../components/layout/Layout'
 import CadastroStep from '../components/CadastroStep'
 import FormIdentificadorIndividuo from '../components/forms/FormIdentificadorIndividuo'
@@ -66,6 +66,12 @@ class Home extends Component {
     this.setState({[activeStep]: object})
   }
 
+  handleSave = (event, data) => {
+    // TODO: validações
+    // TODO: instanciações
+    // TODO: sessionStorage
+  }
+
   renderCadastroStep = (key) => {
     return (
       <CadastroStep
@@ -97,6 +103,17 @@ class Home extends Component {
                   handleInputChange={this.handleInputChange}
                   handleSelectChange={this.handleSelectChange} />
               </Segment>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row textAlign='center'>
+            <Grid.Column width={11} floated='right'>
+              <Button color='teal' animated='vertical' fluid onClick={this.handleSave}>
+                <Button.Content visible><Icon name='save' /></Button.Content>
+                <Button.Content hidden>
+                  Salvar
+                </Button.Content>
+              </Button>
             </Grid.Column>
           </Grid.Row>
         </Grid>
