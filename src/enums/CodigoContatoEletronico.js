@@ -1,9 +1,11 @@
 class CodigoContatoEletronico {
   static options() {
     return ([
-      {codigo: 1, label: 'Comercial', codigoAlternativo: 'B'},
-      {codigo: 2, label: 'Pessoal', codigoAlternativo: 'P'},
-      {codigo: 3, label: 'Tanto comercial quanto pessoal', codigoAlternativo: 'A'}
+      {value: 1, text: 'Comercial',                      codigoAlternativo: 'B'},
+      {value: 2, text: 'Pessoal',                        codigoAlternativo: 'P'},
+      {value: 3, text: 'Tanto comercial quanto pessoal', codigoAlternativo: 'A'}
     ])
   }
 }
+
+export default CodigoContatoEletronico

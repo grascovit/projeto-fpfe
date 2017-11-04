@@ -1,13 +1,15 @@
 class MeioComunicacao {
   static options() {
     return ([
-      {codigo: 1, label: 'Telefone', codigoAlternativo: 'T'},
-      {codigo: 2, label:  'Celular', codigoAlternativo:  'C'},
-      {codigo: 3, label:  'Fax', codigoAlternativo:  'F'},
-      {codigo: 4, label:  'Pager', codigoAlternativo: 'P'},
-      {codigo: 4, label:  'Correio eletrônico', codigoAlternativo: 'E'},
-      {codigo: 6, label:  'URL', codigoAlternativo: 'U'},
-      {codigo: 8, label:  'Outro', codigoAlternativo: 'O'},
+      {value: 1, text:  'Telefone',           codigoAlternativo: 'T'},
+      {value: 2, text:  'Celular',            codigoAlternativo: 'C'},
+      {value: 3, text:  'Fax',                codigoAlternativo: 'F'},
+      {value: 4, text:  'Pager',              codigoAlternativo: 'P'},
+      {value: 4, text:  'Correio eletrônico', codigoAlternativo: 'E'},
+      {value: 6, text:  'URL',                codigoAlternativo: 'U'},
+      {value: 8, text:  'Outro',              codigoAlternativo: 'O'},
     ])
   }
 }
+
+export default MeioComunicacao
