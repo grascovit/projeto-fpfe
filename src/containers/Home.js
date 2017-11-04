@@ -108,7 +108,7 @@ class Home extends Component {
 
           <Grid.Row textAlign='center'>
             <Grid.Column width={11} floated='right'>
-              <Button color='teal' animated='vertical' fluid onClick={this.handleSave}>
+              <Button color='teal' animated='vertical' fluid onClick={() => {this.handleSave()}}>
                 <Button.Content visible><Icon name='save' /></Button.Content>
                 <Button.Content hidden>
                   Salvar
