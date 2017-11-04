@@ -3,13 +3,7 @@ import { Form, Input, Select } from 'semantic-ui-react'
 import AreaGeografica from '../../enums/AreaGeografica'
 
 class FormIdentificadorIndividuo extends Component {
-  constructor(props) {
-    super(props)
-
-    this.handleSelectChange = this.handleSelectChange.bind(this)
-  }
-
-  handleSelectChange(event, data) {
+  handleSelectChange = (event, data) => {
     this.props.handleSelectChange(data.name, data.value)
   }
 
