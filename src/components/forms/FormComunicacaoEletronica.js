@@ -15,17 +15,19 @@ class FormComunicacaoEletronica extends Component {
     return (
       <div>
         <Form>
-          <Form.Field required>
-            <label>Meio de comunicação</label>
-            <Select name='meioComunicacao' defaultValue={formObject.meioComunicacao} onChange={this.handleSelectChange} placeholder='Meio de comunicação eletrônica' options={MeioComunicacao.options()} />
-          </Form.Field>
+          <Form.Group widths='equal'>
+            <Form.Field required>
+              <label>Meio de comunicação</label>
+              <Select name='meioComunicacao' defaultValue={formObject.meioComunicacao} onChange={this.handleSelectChange} placeholder='Meio de comunicação eletrônica' options={MeioComunicacao.options()} />
+            </Form.Field>
+            <Form.Field required>
+              <label>Utilização da comunicação</label>
+              <Select name='utilizacaoComunicacao' defaultValue={formObject.utilizacaoComunicacao} onChange={this.handleSelectChange} placeholder='Utilização do contato eletrônico.' options={CodigoContatoEletronico.options()} />
+            </Form.Field>
+          </Form.Group>
           <Form.Field required>
             <label>Detalhe da comunicação</label>
             <Input name='detalheComunicacao' defaultValue={formObject.detalheComunicacao} onChange={this.props.handleInputChange} placeholder='Número do telefone, e-mail, URL, etc. (de acordo com seleção anterior)' />
-          </Form.Field>
-          <Form.Field required>
-            <label>Utilização da comunicação</label>
-            <Select name='utilizacaoComunicacao' defaultValue={formObject.utilizacaoComunicacao} onChange={this.handleSelectChange} placeholder='Utilização do contato eletrônico.' options={CodigoContatoEletronico.options()} />
           </Form.Field>
           <Form.Field required>
             <label>Preferência de contato</label>
