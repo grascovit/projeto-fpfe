@@ -31,9 +31,6 @@ class Navbar extends Component {
       <Menu pointing secondary>
         <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
         <Menu.Item name='repositorio' active={activeItem === 'repositorio'} onClick={this.handleItemClick} />
-        <Menu.Menu position='right'>
-          <Menu.Item name='logout' active={activeItem === 'logout'} onClick={() => {}} />
-        </Menu.Menu>
       </Menu>
     )
   }
